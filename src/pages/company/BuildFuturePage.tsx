@@ -1,6 +1,6 @@
 import SEO from '../../components/SEO';
 import Contact from '../../components/Contact';
-import CTA from '../../components/CTA';
+import { CTA } from '../../components/CTA';
 import { useLanguage } from '../../context/LanguageContext';
 
 export default function BuildFuturePage() {
