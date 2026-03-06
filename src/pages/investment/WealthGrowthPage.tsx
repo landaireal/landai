@@ -1,6 +1,6 @@
 import SEO from '../../components/SEO';
 import Investors from '../../components/Investors';
-import Stats from '../../components/Stats';
+import { Stats } from '../../components/Stats';
 import { useLanguage } from '../../context/LanguageContext';
 
 export default function WealthGrowthPage() {
