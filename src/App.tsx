@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
@@ -135,6 +136,7 @@ function App() {
         </main>
         <Footer />
         <AIChat />
+        <SpeedInsights />
       </div>
     </Router>
   );
