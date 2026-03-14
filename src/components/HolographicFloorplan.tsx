@@ -34,7 +34,7 @@ export default function HolographicFloorplan() {
             <div className="absolute inset-0 w-full h-[2px] bg-blue-400/50 dark:bg-cyan-400/50 shadow-[0_0_15px_#3b82f6] dark:shadow-[0_0_20px_#06b6d4] animate-[scanline_3s_linear_infinite] pointer-events-none transition-colors"></div>
 
             {/* SVG Blueprint */}
-            <div className="relative aspect-video w-full flex items-center justify-center p-8 bg-zinc-50/80 dark:bg-[#030014]/60 rounded-[2.5rem] transition-colors">
+            <div className="relative aspect-video w-full flex items-center justify-center p-8 bg-zinc-50/80 dark:bg-slate-900/60 rounded-[2.5rem] transition-colors">
               <svg viewBox="0 0 400 300" className="w-full h-full drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]">
                 {/* External Walls */}
                 <path 

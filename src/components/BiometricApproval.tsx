@@ -28,7 +28,7 @@ export default function BiometricApproval() {
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-transparent dark:bg-emerald-500/5 rounded-full blur-3xl" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-transparent dark:bg-slate-950 border border-zinc-300 dark:border-slate-800 rounded-3xl p-8 md:p-16 text-center shadow-2xl relative overflow-hidden">
+        <div className="bg-transparent dark:bg-slate-900 border border-zinc-300 dark:border-slate-800 rounded-3xl p-8 md:p-16 text-center shadow-2xl relative overflow-hidden">
           
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-transparent dark:bg-slate-800 border border-zinc-300 dark:border-slate-700 text-zinc-700 dark:text-slate-300 font-medium text-sm mb-8">
             <Shield className="w-4 h-4" />

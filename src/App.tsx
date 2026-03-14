@@ -63,6 +63,8 @@ const BiometricPage = lazy(() => import('./pages/features/BiometricPage'));
 // Company Pages
 const LeadershipPage = lazy(() => import('./pages/company/LeadershipPage'));
 const BuildFuturePage = lazy(() => import('./pages/company/BuildFuturePage'));
+const DesignSystemDemo = lazy(() => import('./pages/DesignSystemDemo'));
+const ThemePreviewPage = lazy(() => import('./pages/ThemePreviewPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Loading component
@@ -82,7 +84,7 @@ function App() {
     <ErrorBoundary>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen relative bg-white dark:bg-[#030014] text-slate-900 dark:text-white selection:bg-blue-500/30 dark:selection:bg-cyan-500/30 overflow-x-hidden transition-colors duration-500">
+        <div className="min-h-screen relative bg-white dark:bg-slate-900 text-slate-900 dark:text-white selection:bg-blue-500/30 dark:selection:bg-cyan-500/30 overflow-x-hidden transition-colors duration-500">
           <SkipToContent />
           <Navbar />
           <main id="main-content">
@@ -142,6 +144,13 @@ function App() {
             {/* Company Routes */}
             <Route path="/company/leadership" element={<LeadershipPage />} />
             <Route path="/company/build-future" element={<BuildFuturePage />} />
+            
+            {/* Design System Demo */}
+            <Route path="/design-system" element={<DesignSystemDemo />} />
+            
+            {/* Theme Preview */}
+            <Route path="/themes" element={<ThemePreviewPage />} />
+            
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
             </Suspense>

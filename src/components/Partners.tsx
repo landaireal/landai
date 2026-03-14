@@ -125,18 +125,18 @@ export default function Partners() {
   ];
 
   return (
-    <section className="py-20 relative z-20 overflow-hidden bg-white dark:bg-transparent border-b border-zinc-200 dark:border-white/5">
-      <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-b dark:from-[#030014] dark:via-[#030014]/50 dark:to-[#030014] pointer-events-none z-0"></div>
+    <section className="py-24 relative z-20 overflow-hidden bg-white dark:bg-slate-900 border-b border-zinc-200 dark:border-white/5 section-premium">
+      <div className="absolute inset-0 bg-transparent dark:bg-slate-900 pointer-events-none z-0"></div>
       
-      {/* 12D Grid Overlay */}
-      <div className="absolute inset-0 bg-transparent dark:bg-[linear-gradient(rgba(168,85,247,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] dark:bg-[size:40px_40px] pointer-events-none z-0 opacity-0 dark:opacity-50"></div>
+      {/* Enhanced Grid Overlay */}
+      <div className="absolute inset-0 bg-transparent dark:bg-[linear-gradient(rgba(168,85,247,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] dark:bg-[size:50px_50px] pointer-events-none z-0 opacity-0 dark:opacity-50"></div>
       
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-zinc-300 dark:border-cyan-500/30 bg-white dark:glass-12d-panel text-zinc-800 dark:text-cyan-400 mb-6 font-black uppercase tracking-[0.2em] text-sm shadow-sm dark:shadow-[0_0_30px_rgba(6,182,212,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-zinc-600 dark:bg-cyan-400 animate-pulse dark:shadow-[0_0_10px_#06b6d4]"></span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full border-2 border-zinc-300/60 dark:border-cyan-500/30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl text-zinc-800 dark:text-cyan-400 mb-6 font-black uppercase tracking-[0.2em] text-sm shadow-xl dark:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:scale-105 transition-transform duration-300">
+            <span className="w-2.5 h-2.5 rounded-full bg-zinc-600 dark:bg-cyan-400 animate-pulse dark:shadow-[0_0_15px_#06b6d4]"></span>
             {isRtl ? 'شركاء موثوقون من قبل كبار المطورين' : 'Trusted by Top UAE Developers'}
-            <span className="w-2 h-2 rounded-full bg-zinc-600 dark:bg-purple-400 animate-pulse dark:shadow-[0_0_10px_#a855f7]" style={{ animationDelay: '0.5s' }}></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-zinc-600 dark:bg-purple-400 animate-pulse dark:shadow-[0_0_15px_#a855f7]" style={{ animationDelay: '0.5s' }}></span>
           </div>
         </div>
         

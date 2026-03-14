@@ -38,27 +38,43 @@ export default function FractionalOwnership() {
   ];
 
   return (
-    <section id="tokenization" className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto relative z-10 transition-colors">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1)_0%,transparent_50%)] pointer-events-none transition-colors"></div>
+    <section id="tokenization" className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto section-animated-bg">
+      {/* Animated floating orbs */}
+      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-gradient-to-bl from-purple-500/20 to-violet-500/20 dark:from-purple-500/30 dark:to-violet-500/30 rounded-full blur-3xl animate-float-orb pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-gradient-to-tr from-violet-500/20 to-purple-500/20 dark:from-violet-500/30 dark:to-purple-500/30 rounded-full blur-3xl animate-float-orb pointer-events-none" style={{animationDelay: '5s'}}></div>
       
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-20 max-w-7xl mx-auto">
         <div className="relative">
-          <div className="absolute -inset-10 bg-blue-500/5 dark:bg-cyan-500/10 blur-3xl rounded-full pointer-events-none transition-colors"></div>
-          <h2 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-cyan-400 dark:to-purple-500 uppercase flex items-center gap-4 drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-colors">
-            <Network className="w-12 h-12 text-blue-600 dark:text-cyan-400" />
+          <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:via-purple-500/20 blur-3xl rounded-full pointer-events-none animate-pulse transition-colors"></div>
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 via-purple-50 to-indigo-50 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-indigo-900/30 rounded-full border-2 border-blue-200/60 dark:border-cyan-400/30 mb-6 shadow-lg dark:shadow-[0_0_25px_rgba(6,182,212,0.3)] backdrop-blur-sm">
+            <Network className="w-5 h-5 text-blue-600 dark:text-cyan-400 animate-pulse" />
+            <span className="text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 uppercase tracking-widest">Web3 Technology</span>
+          </div>
+          <h2 className="section-title gradient-heading mb-4 uppercase flex items-center gap-6 drop-shadow-lg dark:drop-shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-colors">
             {t.title}
           </h2>
-          <p className="text-xl text-blue-500/80 dark:text-cyan-200/60 font-bold uppercase tracking-widest transition-colors">{t.subtitle}</p>
+          <p className="text-xl md:text-2xl text-blue-600/80 dark:text-cyan-300/70 font-bold tracking-wider transition-colors max-w-3xl">{t.subtitle}</p>
+          <div className="mt-6 flex items-start gap-3">
+            <div className="h-1 w-24 bg-gradient-to-r from-transparent via-blue-500 to-purple-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 via-indigo-500 to-transparent rounded-full"></div>
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
         {assets.map((asset) => (
-          <div key={asset.id} className="glass-12d rounded-[2.5rem] p-6 relative group overflow-hidden border border-indigo-200 dark:border-purple-500/20 hover:border-blue-400 dark:hover:border-cyan-400 transition-all duration-500 shadow-sm dark:shadow-md">
-            {/* Holographic Token Background */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 opacity-5 dark:opacity-10 group-hover:opacity-10 dark:group-hover:opacity-30 transition-opacity duration-1000 text-blue-500 dark:text-cyan-400">
+          <div key={asset.id} className="card-premium p-8 relative group">
+            {/* Enhanced Holographic Token Background */}
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 opacity-5 dark:opacity-10 group-hover:opacity-15 dark:group-hover:opacity-30 transition-opacity duration-1000 text-blue-500 dark:text-cyan-400">
               <Coins className="w-96 h-96 animate-spin-slow" />
             </div>
+            
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none rounded-3xl"></div>
+            
+            {/* Gradient glow on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-indigo-500/0 dark:from-cyan-500/0 dark:via-purple-500/0 dark:to-blue-500/0 group-hover:from-blue-500/5 group-hover:via-purple-500/5 group-hover:to-indigo-500/5 dark:group-hover:from-cyan-500/10 dark:group-hover:via-purple-500/10 dark:group-hover:to-blue-500/10 rounded-3xl transition-all duration-700 pointer-events-none"></div>
 
             <div className="flex flex-col md:flex-row gap-6 relative z-10">
               <div className="w-full md:w-1/3 h-48 rounded-[2rem] overflow-hidden relative border border-zinc-200 dark:border-white/10">

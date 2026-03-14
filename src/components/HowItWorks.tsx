@@ -32,7 +32,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
+    <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">{t('how.title')}</h2>
@@ -48,14 +48,14 @@ export function HowItWorks() {
           <div className="grid md:grid-cols-4 gap-8 relative z-10">
             {steps.map((step, index) => (
               <div key={index} className={`relative text-center animate-fade-in-up ${step.delay}`}>
-                <div className="w-16 h-16 mx-auto bg-white dark:bg-dark-800 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-50 dark:border-dark-900 text-primary-600 dark:text-primary-400 relative z-10 group hover:scale-110 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-500 transition-all duration-300">
+                <div className="w-16 h-16 mx-auto bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-50 dark:border-slate-900 text-primary-600 dark:text-primary-400 relative z-10 group hover:scale-110 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-500 transition-all duration-300">
                   {step.icon}
                   {/* Step number badge */}
                   <div className={`absolute -top-2 ${isRtl ? '-left-2' : '-right-2'} w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-sm border-2 border-white dark:border-dark-800`}>
                     {index + 1}
                   </div>
                 </div>
-                <div className="mt-6 bg-white dark:bg-dark-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-dark-700 h-full">
+                <div className="mt-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 h-full">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     {step.description}

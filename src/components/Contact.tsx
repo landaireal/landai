@@ -56,16 +56,21 @@ export default function Contact() {
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Info Side */}
+        {/* Enhanced Info Side */}
         <div className="space-y-12">
           <div>
-            <h2 className="text-5xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight leading-tight">
               Let's build your <br />
-              <span className="ai-gradient-text">Future together.</span>
+              <span className="blueberry-text drop-shadow-lg dark:drop-shadow-[0_0_30px_rgba(102,126,234,0.5)]">Future together.</span>
             </h2>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 font-medium max-w-md">
+            <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-semibold max-w-md leading-relaxed">
               {t.subtitle}
             </p>
+            <div className="mt-6 flex items-start gap-3">
+              <div className="h-1 w-20 bg-gradient-to-r from-transparent via-blue-500 to-purple-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <div className="h-1 w-20 bg-gradient-to-r from-purple-500 via-pink-500 to-transparent rounded-full"></div>
+            </div>
           </div>
 
           <div className="space-y-6">
@@ -79,14 +84,20 @@ export default function Contact() {
                 <Component
                   key={idx}
                   href={href}
-                  className={`flex items-center gap-6 p-6 rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm ${href ? 'hover:border-indigo-400 dark:hover:border-indigo-600 transition-all cursor-pointer hover:shadow-md' : ''}`}
+                  className={`group flex items-center gap-6 p-6 md:p-8 rounded-[2rem] card-premium relative overflow-hidden ${href ? 'cursor-pointer' : ''}`}
                 >
-                  <div className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 p-4 rounded-2xl">
-                    {item.icon}
+                  {/* Shimmer effect for clickable items */}
+                  {href && <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"></div>}
+                  
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 dark:from-cyan-500 dark:to-purple-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                    <div className="relative bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/40 dark:to-purple-900/40 text-indigo-600 dark:text-cyan-400 p-5 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 icon-float">
+                      {item.icon}
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-1">{item.title}</h4>
-                    <p className="text-zinc-600 dark:text-zinc-400 font-medium">{item.detail}</p>
+                  <div className="relative z-10">
+                    <h4 className="text-xl font-black text-zinc-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 dark:group-hover:from-cyan-400 dark:group-hover:to-purple-400 transition-all duration-300">{item.title}</h4>
+                    <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 font-semibold">{item.detail}</p>
                   </div>
                 </Component>
               );
@@ -94,30 +105,36 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Form Side */}
-        <div className="bg-white dark:bg-zinc-900 p-8 md:p-12 rounded-[3rem] border border-zinc-200/50 dark:border-zinc-800/50 shadow-2xl">
+        {/* Enhanced Form Side */}
+        <div className="card-premium p-8 md:p-12 relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/10 via-purple-500/10 to-transparent dark:from-cyan-500/20 dark:via-purple-500/20 rounded-bl-full"></div>
+          <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/10 via-pink-500/10 to-transparent dark:from-purple-500/20 dark:via-pink-500/20 rounded-tr-full"></div>
+          
           {isSubmitted && (
-            <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
-              <p className="text-green-800 dark:text-green-300 font-medium">
+            <div className="relative z-10 mb-8 p-5 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-200 dark:border-green-800/50 rounded-2xl flex items-center gap-4 shadow-lg dark:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+              <div className="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
+                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <p className="text-green-800 dark:text-green-300 font-bold text-lg">
                 {isAr ? 'تم إرسال رسالتك بنجاح!' : 'Message sent successfully!'}
               </p>
             </div>
           )}
           
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-zinc-900 dark:text-white ml-2">{t.name}</label>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 relative z-10">
+            <div className="space-y-3">
+              <label className="text-sm font-black text-zinc-900 dark:text-white ml-2 uppercase tracking-wider">{t.name}</label>
               <input 
                 type="text" 
                 placeholder="John Doe" 
                 {...register('name')}
-                className={`w-full bg-zinc-50 dark:bg-zinc-950 border ${
+                className={`w-full bg-white dark:bg-zinc-950 border-2 ${
                   errors.name ? 'border-red-500' : 'border-zinc-200 dark:border-zinc-800'
-                } rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-zinc-900 dark:text-white`}
+                } rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-cyan-500 focus:border-transparent transition-all text-zinc-900 dark:text-white font-medium shadow-sm hover:shadow-md`}
               />
               {errors.name && (
-                <p className="text-red-500 text-sm ml-2">{errors.name.message}</p>
+                <p className="text-red-500 text-sm ml-2 font-semibold">{errors.name.message}</p>
               )}
             </div>
             
@@ -170,10 +187,10 @@ export default function Contact() {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full ai-gradient-bg text-white py-5 rounded-2xl font-bold text-lg hover:shadow-lg hover:shadow-indigo-500/25 transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary py-6 text-xl justify-center disabled:opacity-50 disabled:cursor-not-allowed group"
             >
-              {isSubmitting ? (isAr ? 'جارٍ الإرسال...' : 'Sending...') : t.send} 
-              <Send className="w-5 h-5" />
+              <span>{isSubmitting ? (isAr ? 'جارٍ الإرسال...' : 'Sending...') : t.send}</span>
+              <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
         </div>

@@ -67,7 +67,7 @@ export default function PropertyList({ searchQuery }: PropertyListProps) {
 
             {/* Image Container */}
             <div className="relative h-80 rounded-[2.5rem] overflow-hidden mb-6 border border-zinc-200 dark:border-white/20 shadow-sm dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 dark:from-[#030014]/40 dark:to-[#030014]/90 z-10 pointer-events-none mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 dark:from-slate-900/40 dark:to-slate-900/90 z-10 pointer-events-none mix-blend-overlay"></div>
               
               <img 
                 src={property.image} 

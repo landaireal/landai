@@ -23,4 +23,27 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'framer-motion': ['framer-motion'],
+          'lucide-react': ['lucide-react'],
+          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          
+          // Page chunks
+          'pages-home': ['./src/pages/Home.tsx'],
+          'pages-properties': ['./src/pages/PropertiesPage.tsx', './src/pages/PropertyDetailsPage.tsx'],
+          'pages-payment': ['./src/pages/PaymentPage.tsx', './src/pages/PaymentGatewayPage.tsx'],
+          'pages-admin': ['./src/pages/AdminDashboard.tsx'],
+          
+          // Component chunks
+          'components-contact': ['./src/components/Contact.tsx'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 });

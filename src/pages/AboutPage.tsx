@@ -63,7 +63,7 @@ export default function AboutPage() {
               return (
                 <div 
                   key={index}
-                  className="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-cyan-500 transition-all duration-300 hover:shadow-lg"
+                  className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-cyan-500 transition-all duration-300 hover:shadow-lg"
                 >
                   <Icon className="w-12 h-12 text-blue-500 dark:text-cyan-500 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{value.title}</h3>

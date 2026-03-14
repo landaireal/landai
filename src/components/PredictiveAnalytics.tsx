@@ -11,24 +11,37 @@ export default function PredictiveAnalytics() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto relative z-10 transition-colors">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/5 dark:via-cyan-900/10 to-transparent pointer-events-none transition-colors"></div>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto section-animated-bg">
+      {/* Animated floating orbs */}
+      <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-purple-500/15 to-violet-500/15 dark:from-purple-500/25 dark:to-violet-500/25 rounded-full blur-3xl animate-float-orb pointer-events-none"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-violet-500/15 to-purple-500/15 dark:from-violet-500/25 dark:to-purple-500/25 rounded-full blur-3xl animate-float-orb pointer-events-none" style={{animationDelay: '11s'}}></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-16 transition-colors">
-        <h2 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter text-zinc-900 dark:text-white dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] uppercase flex flex-col md:flex-row items-center gap-6 justify-center transition-colors">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-20 transition-colors">
+        <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-50 via-pink-50 to-purple-50 dark:from-purple-900/30 dark:via-pink-900/30 dark:to-purple-900/30 rounded-full border-2 border-purple-200/60 dark:border-purple-400/30 mb-6 shadow-lg dark:shadow-[0_0_25px_rgba(168,85,247,0.3)] backdrop-blur-sm">
+          <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400 animate-pulse" />
+          <span className="text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 uppercase tracking-widest">AI-Powered Analytics</span>
+        </div>
+        <h2 className="section-title gradient-heading mb-4 dark:drop-shadow-[0_0_30px_rgba(168,85,247,0.5)] uppercase flex flex-col md:flex-row items-center gap-6 justify-center transition-colors">
           <LineChart className="w-16 h-16 text-purple-600 dark:text-purple-500 animate-pulse-fast transition-colors" />
           {t.title}
         </h2>
-        <p className="text-xl text-purple-600 dark:text-purple-200/60 font-bold uppercase tracking-widest flex items-center gap-3 transition-colors">
-          <Cpu className="w-5 h-5 text-blue-600 dark:text-cyan-400 transition-colors" />
+        <p className="text-xl md:text-2xl text-purple-600/80 dark:text-purple-300/70 font-bold tracking-wider transition-colors max-w-3xl">
           {t.subtitle}
         </p>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-purple-500 to-pink-500 rounded-full"></div>
+          <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-pink-500 via-purple-500 to-transparent rounded-full"></div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto glass-12d rounded-[3rem] p-8 md:p-12 border border-purple-200 dark:border-purple-500/20 shadow-sm dark:shadow-[0_0_50px_rgba(168,85,247,0.15)] relative overflow-hidden transition-colors">
-        {/* Hologram Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none transition-colors"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-purple-100/50 dark:from-purple-900/40 to-transparent pointer-events-none blur-xl transition-colors"></div>
+      <div className="max-w-7xl mx-auto card-premium p-8 md:p-12 relative">
+        {/* Enhanced Hologram Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 pointer-events-none rounded-3xl transition-colors"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-purple-100/60 via-pink-100/30 to-transparent dark:from-purple-900/50 dark:via-pink-900/30 to-transparent pointer-events-none blur-xl transition-colors rounded-b-3xl"></div>
+        
+        {/* Shimmer effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-2000 pointer-events-none rounded-3xl"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 relative z-10 border-b border-zinc-200 dark:border-white/5 pb-8 transition-colors">
           <div>

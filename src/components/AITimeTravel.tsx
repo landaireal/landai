@@ -26,7 +26,7 @@ export default function AITimeTravel() {
   };
 
   return (
-    <section className="py-24 bg-transparent dark:bg-slate-950 transition-colors duration-500 overflow-hidden relative">
+    <section className="py-24 bg-transparent dark:bg-slate-900 transition-colors duration-500 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100/50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700/50 text-indigo-700 dark:text-indigo-400 font-medium text-sm mb-6">

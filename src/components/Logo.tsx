@@ -130,7 +130,7 @@ export function Logo({ className = "" }: { className?: string }) {
             }}
           >
             <tspan fill="#1e293b" className="dark:fill-white">LAND </tspan>
-            <tspan fill="#06b6d4" className="dark:fill-#22d3ee">AI</tspan>
+            <tspan fill="#06b6d4" className="dark:fill-[#22d3ee]">AI</tspan>
           </text>
         </g>
 
@@ -144,7 +144,7 @@ export function Logo({ className = "" }: { className?: string }) {
             fontWeight="800" 
             fontSize="10" 
             fill="#0891b2" 
-            className="dark:fill-#22d3ee"
+            className="dark:fill-[#22d3ee]"
             textAnchor="middle" 
             letterSpacing="3.5"
             style={{ 

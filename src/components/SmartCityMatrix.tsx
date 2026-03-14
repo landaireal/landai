@@ -58,8 +58,8 @@ export default function SmartCityMatrix() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto relative z-10 bg-transparent border-t border-zinc-200 dark:border-white/5">
-      <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-t dark:from-[#030014] dark:via-cyan-900/5 dark:to-[#030014] pointer-events-none"></div>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[100rem] mx-auto relative z-10 bg-transparent dark:bg-slate-900 border-t border-zinc-200 dark:border-white/5">
+      <div className="absolute inset-0 bg-transparent dark:bg-slate-900 pointer-events-none"></div>
 
       <div className="flex flex-col md:flex-row justify-between items-center mb-16 relative z-10 max-w-7xl mx-auto">
         <div className="text-center md:text-left mb-8 md:mb-0">

@@ -26,36 +26,67 @@ export default function Properties() {
   ];
 
   return (
-    <section id="properties" className="relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12">
+    <section id="properties" className="section-animated-bg py-20 relative">
+      {/* Animated floating orbs */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-violet-500/20 dark:from-purple-500/30 dark:to-violet-500/30 rounded-full blur-3xl animate-float-orb pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-violet-500/20 to-purple-500/20 dark:from-violet-500/30 dark:to-purple-500/30 rounded-full blur-3xl animate-float-orb pointer-events-none" style={{animationDelay: '7s'}}></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Enhanced Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16">
           <div className="text-center md:text-left mb-6 md:mb-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full border border-blue-200 dark:border-blue-800 mb-4"
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-50 via-violet-50 to-purple-50 dark:from-purple-900/30 dark:via-violet-900/30 dark:to-purple-900/30 rounded-full border-2 border-purple-200/60 dark:border-purple-400/30 mb-6 shadow-lg dark:shadow-[0_0_25px_rgba(124,58,237,0.3)] hover:shadow-xl dark:hover:shadow-[0_0_35px_rgba(124,58,237,0.4)] transition-all duration-500 backdrop-blur-sm"
             >
-              <Sparkles className="w-4 h-4 text-blue-600 dark:text-cyan-400" />
-              <span className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider">
+              <Sparkles className="w-5 h-5 text-purple-600 dark:text-purple-400 animate-pulse" />
+              <span className="blueberry-text text-sm font-black uppercase tracking-widest">
                 {isAr ? 'عقارات مميزة' : 'Premium Listings'}
               </span>
+              <Sparkles className="w-5 h-5 text-violet-600 dark:text-violet-400 animate-pulse" style={{animationDelay: '0.5s'}} />
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="section-title text-gray-900 dark:text-white mb-4" 
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               {t.title}
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="section-subtitle max-w-2xl"
+            >
               {t.subtitle}
-            </p>
+            </motion.p>
+            <div className="mt-4 flex items-center justify-center md:justify-start gap-3">
+              <div className="h-1 w-16 bg-gradient-to-r from-transparent via-blue-500 to-purple-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <div className="h-1 w-16 bg-gradient-to-r from-purple-500 via-pink-500 to-transparent rounded-full"></div>
+            </div>
           </div>
-          <Link 
-            to="/properties"
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
           >
-            {t.viewAll}
-            <TrendingUp className="w-4 h-4" />
-          </Link>
+            <Link 
+              to="/properties"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              {t.viewAll}
+              <TrendingUp className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
 
         {/* Properties Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
@@ -68,17 +99,27 @@ export default function Properties() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.5 }}
               onClick={() => navigate(`/properties/${property.id}`)}
-              className="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-gray-200 dark:border-slate-700/50 hover:border-blue-400 dark:hover:border-cyan-400/80 hover:shadow-2xl dark:hover:shadow-[0_20px_60px_-15px_rgba(6,182,212,0.4)] transition-all duration-500 cursor-pointer hover:-translate-y-3"
+              className="group card-standard cursor-pointer relative overflow-hidden hover:-translate-y-2 hover:border-indigo-400/60 dark:hover:border-indigo-600/60 transition-all duration-700"
             >
-              {/* Property Image */}
-              <div className="relative h-56 overflow-hidden">
+              {/* Shimmer hover effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none z-10"></div>
+              
+              {/* Decorative elements matching contact form */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-purple-500/10 via-violet-500/10 to-transparent dark:from-purple-500/20 dark:via-violet-500/20 rounded-bl-full"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-violet-500/10 via-purple-500/10 to-transparent dark:from-violet-500/20 dark:via-purple-500/20 rounded-tr-full"></div>
+              
+              {/* Enhanced Property Image */}
+              <div className="relative h-64 overflow-hidden rounded-t-3xl z-10">
                 <img 
                   src={property.images[0]} 
                   alt={property.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 dark:from-cyan-500/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Badges */}
                 <div className="absolute top-3 left-3 flex flex-wrap gap-2">
@@ -86,7 +127,7 @@ export default function Properties() {
                     {property.type}
                   </span>
                   {property.ai_score >= 9 && (
-                    <span className="px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full flex items-center gap-1">
+                    <span className="badge-featured flex items-center gap-1">
                       <Sparkles className="w-3 h-3" />
                       AI {property.ai_score}/10
                     </span>

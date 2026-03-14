@@ -7,9 +7,9 @@ export default function ARPortal() {
   const t = translations[language];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent dark:bg-[#030014] transition-colors duration-500">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent dark:bg-slate-900 transition-colors duration-500">
       <div className="absolute inset-0 z-0 hidden dark:block bg-[url('https://images.unsplash.com/photo-1541888046187-21a4f004b7be?q=80&w=2560&auto=format&fit=crop')] bg-cover bg-center opacity-30 animate-[pan_60s_linear_infinite]" />
-      <div className="absolute inset-0 bg-transparent dark:from-[#030014] dark:via-transparent dark:to-[#030014]" />
+      <div className="absolute inset-0 bg-transparent dark:bg-slate-900" />
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         {/* Header */}

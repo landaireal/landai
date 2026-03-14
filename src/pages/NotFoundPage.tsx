@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-12 bg-white dark:bg-[#030014]">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-12 bg-white dark:bg-slate-900">
       <SEO
         title="404 - Page Not Found | Land AI Real Estate"
         description="The page you are looking for does not exist or has been moved."

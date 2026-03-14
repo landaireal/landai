@@ -23,11 +23,11 @@ export default function Heatmap() {
       </div>
 
       {/* Hologram Map Container */}
-      <div className="relative w-full max-w-6xl mx-auto h-[600px] rounded-[3rem] border border-zinc-300 dark:border-white/5 bg-transparent dark:bg-[#030014]/80 backdrop-blur-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col md:flex-row p-6 md:p-12 gap-12">
+      <div className="relative w-full max-w-6xl mx-auto h-[600px] rounded-[3rem] border border-zinc-300 dark:border-white/5 bg-transparent dark:bg-slate-900/80 backdrop-blur-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col md:flex-row p-6 md:p-12 gap-12">
         
         {/* Holographic Grid Background inside container */}
         <div className="absolute inset-0 z-0 dark:block hidden" style={{ backgroundImage: 'linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        <div className="absolute inset-0 z-0 bg-transparent dark:bg-gradient-to-t dark:from-[#030014] dark:via-transparent dark:to-[#030014]"></div>
+        <div className="absolute inset-0 z-0 bg-transparent dark:bg-slate-900"></div>
 
         {/* Abstract Map Interface */}
         <div className="relative z-10 flex-1 border border-zinc-300 dark:border-cyan-500/20 rounded-3xl bg-transparent dark:bg-black/50 overflow-hidden group">

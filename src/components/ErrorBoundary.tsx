@@ -37,7 +37,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
       return (
         <div
-          className="min-h-screen flex flex-col items-center justify-center p-8 bg-white dark:bg-[#030014]"
+          className="min-h-screen flex flex-col items-center justify-center p-8 bg-white dark:bg-slate-900"
           role="alert"
           aria-live="assertive"
         >

@@ -15,9 +15,9 @@ export default function Ledger() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent dark:bg-[#030014] transition-colors duration-500">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent dark:bg-slate-900 transition-colors duration-500">
       <div className="absolute inset-0 z-0 hidden dark:block bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2560&auto=format&fit=crop')] bg-cover bg-center opacity-30 animate-[pan_80s_linear_infinite]" />
-      <div className="absolute inset-0 bg-transparent dark:from-[#030014] dark:via-[#030014]/60 dark:to-transparent" />
+      <div className="absolute inset-0 bg-transparent dark:bg-slate-900" />
 
       <div className="max-w-7xl mx-auto relative z-10 text-center mb-16">
         <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-indigo-500/30 dark:border-purple-500/50 bg-indigo-50 dark:bg-black/40 backdrop-blur-md text-indigo-600 dark:text-purple-300 font-bold tracking-widest text-sm mb-6 shadow-sm dark:shadow-[0_0_20px_rgba(168,85,247,0.3)]">
@@ -40,7 +40,7 @@ export default function Ledger() {
               <div className="absolute inset-0 w-full h-[2px] bg-indigo-400 dark:bg-cyan-400 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#06b6d4] transition-all duration-700 top-0 left-0 -translate-x-full group-hover:translate-x-0"></div>
 
               <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <div className="w-12 h-12 rounded-full bg-transparent dark:bg-[#030014] border border-zinc-300 dark:border-purple-500/40 flex items-center justify-center relative">
+                <div className="w-12 h-12 rounded-full bg-transparent dark:bg-slate-900 border border-zinc-300 dark:border-purple-500/40 flex items-center justify-center relative">
                   <Link className="w-5 h-5 text-indigo-500 dark:text-purple-400 relative z-10" />
                   <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-md animate-pulse"></div>
                 </div>

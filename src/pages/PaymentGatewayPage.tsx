@@ -341,7 +341,7 @@ function PaymentFormRenderer({ method, amount, property, isAr, onBack, onSuccess
 // Additional Payment Forms
 function DigitalWalletForm({ method, amount, property, isAr, onBack, onSuccess }: any) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg">
       <div className="text-center mb-6">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
           <span className="text-4xl">{method.icon}</span>
@@ -377,7 +377,7 @@ function DigitalWalletForm({ method, amount, property, isAr, onBack, onSuccess }
 
 function CashPaymentForm({ method, amount, property, isAr, onBack, onSuccess }: any) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg">
       <div className="text-center mb-6">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
           <span className="text-4xl">💵</span>
@@ -425,11 +425,11 @@ function CashPaymentForm({ method, amount, property, isAr, onBack, onSuccess }: 
 
 function GenericPaymentForm({ method, amount, property, isAr, onBack, onSuccess }: any) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg">
       <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
         {isAr ? method.nameAr : method.name}
       </h3>
-      <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl mb-6">
+      <div className="p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl mb-6">
         <div className="flex justify-between items-center">
           <span className="text-gray-600 dark:text-gray-400">{isAr ? 'المبلغ' : 'Amount'}</span>
           <span className="text-2xl font-bold text-blue-600 dark:text-cyan-400">

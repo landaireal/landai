@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Calendar, Clock, Video, User, Mail, Phone } from 'lucide-react';
+import { Calendar, Clock, Video, User, Mail, Phone, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props {
   propertyId: string;
@@ -16,26 +17,56 @@ export default function VirtualTourScheduler({ propertyId, propertyTitle }: Prop
     date: '',
     time: '',
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle tour scheduling
-    alert(language === 'ar' ? 'تم جدولة الجولة الافتراضية بنجاح!' : 'Virtual tour scheduled successfully!');
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: '', email: '', phone: '', date: '', time: '' });
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 border border-blue-200 dark:border-slate-700">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl p-6 border-2 border-purple-200 dark:border-purple-500/40 shadow-xl"
+    >
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 bg-blue-500 dark:bg-cyan-500 rounded-xl">
+        <div className="p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl">
           <Video className="w-6 h-6 text-white" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+          <h3 className="text-xl font-black text-slate-900 dark:text-white">
             {language === 'ar' ? 'جدولة جولة افتراضية' : 'Schedule Virtual Tour'}
           </h3>
-          <p className="text-sm text-slate-600 dark:text-slate-400">{propertyTitle}</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-1">{propertyTitle}</p>
         </div>
       </div>
+
+      <AnimatePresence mode="wait">
+        {isSubmitted ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="py-12 text-center"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-full mb-4">
+              <Check className="w-8 h-8 text-white" />
+            </div>
+            <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+              {language === 'ar' ? 'تم بنجاح!' : 'Success!'}
+            </h4>
+            <p className="text-slate-600 dark:text-slate-400">
+              {language === 'ar' ? 'سنتواصل معك قريباً' : 'We\'ll contact you soon'}
+            </p>
+          </motion.div>
+        ) : (
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -109,13 +140,17 @@ export default function VirtualTourScheduler({ propertyId, propertyTitle }: Prop
           </div>
         </div>
 
-        <button
+        <motion.button
           type="submit"
-          className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-cyan-500 dark:to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all"
         >
           {language === 'ar' ? 'جدولة الجولة' : 'Schedule Tour'}
-        </button>
+        </motion.button>
       </form>
-    </div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }

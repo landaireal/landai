@@ -68,7 +68,7 @@ export default function PaymentPage() {
         </button>
 
         {/* Header */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 mb-8 shadow-lg">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 mb-8 shadow-lg">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
               <h1 className="text-3xl font-bold text-zinc-900 dark:text-white mb-2">
@@ -103,7 +103,7 @@ export default function PaymentPage() {
                 <button
                   key={plan.type}
                   onClick={() => setSelectedPlan(plan)}
-                  className={`relative bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 transition-all text-left ${
+                  className={`relative bg-white dark:bg-slate-900 rounded-2xl p-6 border-2 transition-all text-left ${
                     isSelected
                       ? 'border-blue-500 dark:border-cyan-400 shadow-lg scale-105'
                       : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-cyan-500'
@@ -173,7 +173,7 @@ export default function PaymentPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Breakdown Details */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-lg">
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
                 {isAr ? 'تفاصيل الدفع' : 'Payment Breakdown'}
               </h2>
@@ -262,7 +262,7 @@ export default function PaymentPage() {
             </div>
 
             {/* Benefits */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4">
                 {isAr ? 'لماذا تختار هذه الخطة؟' : 'Why Choose This Plan?'}
               </h3>
@@ -317,7 +317,7 @@ export default function PaymentPage() {
 
           {/* Checkout Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+            <div className="sticky top-24 bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-slate-700">
               <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4">
                 {isAr ? 'ملخص الطلب' : 'Order Summary'}
               </h3>
@@ -382,7 +382,7 @@ export default function PaymentPage() {
         {/* Checkout Modal (Simple version) */}
         {showCheckout && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-md w-full">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 max-w-md w-full">
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
                 {isAr ? 'معلومات الدفع' : 'Payment Information'}
               </h3>

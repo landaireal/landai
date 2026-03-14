@@ -5,7 +5,7 @@ export function CTA() {
   const { t, isRtl } = useLanguage();
 
   return (
-    <section className="py-20 bg-white dark:bg-dark-900 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-primary-900 to-primary-800 rounded-3xl overflow-hidden relative shadow-2xl">
           {/* Background decoration */}
